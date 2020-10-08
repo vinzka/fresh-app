@@ -1,0 +1,89 @@
+<div class='container-show mb-10'>
+
+  <div class="card-activity-show border-bottom">
+    <p class="back-arrow">
+      <%= link_to :back do %>
+      <i class="arrow left"></i>
+      <% end %>
+    </p>
+    <%= image_tag "#{@activity.sport.name.downcase}.jpg", class: 'card-activity-image' %>
+
+
+    <div class="card-activity-show-infos">
+
+      <div>
+        <div class="show-header">
+        <% if @activity.is_owner?(current_user) %>
+        <h2 class='show-title'><%= @activity.title %></h2>
+        <%= link_to activity_path(@activity), method: :delete, data: {confirm: 'Are you sure?'} do %><i class="fas fa-trash"></i><% end %>
+        <% else %>
+        <h2 class='show-title'><%= @activity.title %></h2>
+        <% end %>
+        </div>
+        <p class='show-paragraph'><%= '🗓'  %> <%= @activity.start_time.strftime("%A, %B %-d, %H:%M -") %> <%= @activity.end_time.strftime("%H:%M")%> </p>
+        <p class='show-paragraph'><%= '📍' %><%= @activity.location %></p>
+        <p class='show-paragraph'><%= @activity.description %></p>
+      </div>
+      <a class="card-activity-show-btn btn" href="#"><%= @activity.sport.name %> </a>
+
+      <div class="card-activity-show-frame">
+        <% if @activity.is_owner?(current_user) %>
+        <div class="card-activity-show-players">
+          <p> <strong>Limit: </strong> </p>
+          <p> <strong> <%= @activity.players.count %>  </strong> playing </p>
+          <p>  <strong> <%= @activity.player_limit - @activity.players.count %> </strong>  needed </p>
+        </div>
+        <div class="divider-vertical"></div>
+        <div class="card-activity-show-skill">
+          <p> <strong> Skill Level: </strong> </p>
+          <p> <%= @activity.skill_level%></p>
+        </div>
+        <% else %>
+        <div class="card-activity-show-players">
+          <p> <strong>Limit: </strong> </p>
+          <p> <strong> <%= @activity.players.count %>  </strong> playing </p>
+          <p>  <strong> <%= @activity.player_limit - @activity.players.count %> </strong>  needed </p>
+        </div>
+        <div class="divider-vertical-avatar"></div>
+        <div class="card-activity-show-skill">
+          <p> <strong> Skill Level: </strong> </p>
+          <p> <%= @activity.skill_level%></p>
+        </div>
+        <div class="divider-vertical-avatar"></div>
+        <div class="card-activity-show-host-photo">
+          <p> <strong>Host: </strong> </p>
+          <% if @activity.user.photo.attached? %>
+          <%= link_to(user_path(@activity.user)) do%>
+          <%=cl_image_tag(@activity.user.photo.key, crop: :fill, class: "avatar-showpage") %>
+          <% end %>
+          <% else %>
+          <%= link_to(user_path(@activity.user)) do%>
+          <%= image_tag "default_avatar.png", crop: :fill, class:"avatar-large" %>
+          <% end %>
+          <% end %>
+          <% end %>
+        </div>
+      </div>
+
+
+      <% if @activity.is_owner?(current_user) %>
+        <div class= "show-btn-action">
+          <%= link_to edit_activity_path(@activity), class: "btn-edit" do %>Edit <i class="fas fa-edit"></i><% end %>
+        </div>
+      <% elsif @activity.is_player?(current_user) %>
+        <div class= "show-btn-action">
+          <%= link_to "Leave", player_path(@player), method: :delete, remote: true,  class: "btn-leave"%>
+        </div>
+      <% else %>
+        <div class= "show-btn-action">
+          <%= link_to "Join", activity_players_path(@activity), method: :post, remote: true, class: "btn-join"%>
+        </div>
+      <% end %>
+
+    </div>
+  </div>
+</div>
+
+
+
+

@@ -1,0 +1,23 @@
+<% if @video.try(:any?) %>
+  <div class="activities-cards">
+    <% activities.sort_by(&:start_time).each do |activity| %>
+      <%= render 'activity_card', activity: activity %>
+      <p></p>
+    <% end %>
+  </div>
+
+<% elsif params.include?(:query) %>
+ <div class="dashbaord-cards">
+  <% if params[:query] == 'joined' %>
+    <div class="no-activities">You haven't joined any activities yet!</div>
+  <% elsif params[:query] == 'created' %>
+    <div class="no-activities">You haven't created any activities yet</div>
+  <% elsif params[:query] == 'past' %>
+    <div class="no-activities">You have no past activities</div>
+  <% else %>
+    <div class="no-activities">You have no activities</div>
+  <% end %>
+  <% else %> <%# no activities, but no query given %>
+  <div class="no-activities">You have no activities</div>
+<% end %>
+</div>
