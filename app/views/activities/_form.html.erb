@@ -1,0 +1,28 @@
+<%= simple_form_for activity do |f| %>
+  <%= f.input :start_time, as: :string, required: true, input_html: {class: "datepicker"} %>
+  <%= f.input :end_time, as: :string, required: true, input_html: {class: "datepicker"} %>
+  <%= f.input :title, label: "Activity's name", placeholder: 'My Activity', input_html: { maxlength: 25 } %>
+  <%= f.input :location, input_html: {id:'activity_location'} %>
+  <%= f.association :sport %>
+  <div class="row">
+    <div class="col">
+      <%= f.input :skill_level, collection: %w[Beginner Intermediate Pro] %>
+    </div>
+    <div class="col">
+      <label for="rangePlayer">Player limit</label>&nbsp;<output name="playerOutputName" id="playerOutputId">10</output>
+      <br>
+      <input type="range" name="activity[player_limit]" id="playerInputId" value="10" min="1" max="21" oninput="playerOutputId.value = playerInputId.value">
+
+    </div>
+  </div>
+  <%= f.input :description, required: true, input_html: { maxlength: 120 } %>
+  <div class="form-group d-flex justify-content-end">
+    <% if activity.id %>
+    <input class="btn btn-primary" type="submit" value="Save Acitivty" name="commit">
+    <% else %>
+     <input class="btn btn-primary" type="submit" value="Create Acitivty" name="commit">
+     <% end %>
+  </div>
+<% end %>
+<%= javascript_pack_tag 'init_auto_complete' %>
+<%= javascript_pack_tag 'flatpickr' %>
