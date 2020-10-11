@@ -1,20 +1,56 @@
 .avatar {
-  width: 40px;
+  width: 37px;
+  height: 37px;
   border-radius: 50%;
+  padding: 2px;
 }
 .avatar-large {
-  width: 56px;
+  width: 43px;
+  height: 43px;
   border-radius: 50%;
+  margin-right: 24px;
+  margin-top: 26px;
+}
+.avatar-x-large {
+  width: 136px !important;
+  height: 136px;
+  border-radius: 50%;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  border: $white 1px solid;
 }
 .avatar-bordered {
   width: 40px;
   border-radius: 50%;
   box-shadow: 0 1px 2px rgba(0,0,0,0.2);
-  border: white 1px solid;
+  border: $white 1px solid;
 }
-.avatar-square {
-  width: 40px;
-  border-radius: 0px;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+
+.avatar-showpage {
+  width: 67px;
+  height: 67px;
+  border-radius: 50%;
+  margin-right: -5px;
+  margin-top: 1px;
+}
+
+///////// user show /////////////
+
+.avatar-user-show{
+  position: absolute;
+  left: 25px;
+  top: 20px;
+}
+.avatar-x-large-user-show {
+  width: 150px !important;
+  height: 150px;
+  border-radius: 50%;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   border: white 1px solid;
+  top: 202px;
+  left: 86px;
+}
+.card-activity-show > img {
+  height: 300px;
+  width: 100%;
+  object-fit: cover;
 }

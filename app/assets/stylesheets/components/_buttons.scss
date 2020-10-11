@@ -1,0 +1,101 @@
+.btn-sport {
+  color: white !important;
+  font-size: 13px;
+  padding: 3px 12px;
+  border-radius: 180px;
+  background: #0d7377;
+}
+
+.btn-sport-fav-flex {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  margin-top: 40px;
+  height: 100%;
+}
+
+.btn-sport-fav {
+  color: white;
+  font-size: 13px;
+  padding: 8px 24px;
+  border-radius: 180px;
+  background: blue;
+  margin: 8px;
+}
+
+.btn-sport-fav-user {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+  align-content: stretch;
+}
+
+.btn-primary {
+  color: white !important;
+  font-size: x-medium;
+  padding: 8px 24px;
+  border-radius: 8px;
+  background: green;
+  margin: 8px;
+  border-style: none;
+  margin-bottom: 8px !important;
+}
+
+.btn-sign-page-login {
+  color: white !important;
+  font-size: x-small;
+  padding: 8px 24px;
+  border-radius: 8px;
+  background: blue;
+  width: 54vw;
+}
+
+.btn-login-page-login {
+  color: #F7f8F2 !important;
+  padding: 8px 24px;
+  border-radius: 8px;
+  background: blue;
+  width: 92vw;
+  height: 7vh;
+  font-size: medium !important;
+}
+
+.btn-signup-page-login {
+  color: blue !important;
+  padding: 8px 24px;
+  border-radius: 8px;
+  border-style: solid;
+  border-width: thin;
+  border-color: blue;
+  background: white;
+  width: 92vw;
+  height: 7vh;
+  font-size: medium !important;
+}
+
+.btn-sign-page-signup {
+  color: blue !important;
+  font-size: x-small;
+  padding: 8px 24px;
+  border-radius: 8px;
+  border-style: solid;
+  border-width: thin;
+  border-color: blue;
+  background: white;
+  width: 54vw;
+}
+
+.btn-log-out-user {
+  background-color: white;
+  color: pink;
+  border-radius: 8px;
+  padding: 8px 24px;
+  border: 0.2px solid pink;
+  font-weight: bold;
+  width: 90vh;
+  text-align: center;
+  text-decoration: none;
+}

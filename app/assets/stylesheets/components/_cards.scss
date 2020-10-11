@@ -1,0 +1,177 @@
+.cards-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 50px;
+}
+
+.card-activity-index {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  border-radius: 20px;
+  width: 100%;
+  height: 280px;
+}
+
+.card-activity-index > img, .card-activity-index img.card-activity-image  {
+  height: 112px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-activity-index a {
+  color: blue;
+}
+
+.card-activity-index h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+  color: #212121;
+;
+}
+
+.card-activity-index p {
+  font-size: 12px;
+  margin: 0;
+  color: #212121;
+}
+
+.card-activity-index .card-activity-index-infos {
+  padding: 16px;
+  padding-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+  margin-bottom: 0px;
+  text-decoration: none;
+}
+
+.card-activity-index-infos .card-activity-index-btn{
+  position: absolute;
+  left: 16px;
+  top: -36px;
+  width: fit-content;
+  font-size: 13px;
+  text-decoration: none;
+  color: white;
+}
+
+.card-activity-index .card-activity-index-players {
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  justify-content: space-around;
+  height: 60px;
+}
+
+.card-activity-index-players p {
+  justify-content: space-between;
+  align-items: flex-end;
+  position: absolute;
+}
+
+.card-activity-index-players .card-activity-index-host {
+  bottom: auto;
+  left: 16px;
+  top: -14px;
+  width: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: absolute;
+}
+
+.card-activity-index-players .card-activity-index-player {
+  right: 16px;
+  top: -20px;
+  width: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-left: 4px;
+  margin-bottom: -14px;
+}
+
+.card-activity-index-players .card-activity-index-ct {
+  align-self: center;
+  margin-left: 4px;
+}
+
+///////////card
+
+.card-activity-index-players .card-activity-index-nd {
+  align-self: center;
+  margin-left: 4px;
+  margin-bottom: 3px;
+  margin-right: 41px;
+  p {
+  color: blue;
+  }
+}
+
+.container-index {
+  background-color: white;
+  padding: 0 90px;
+}
+.container-index h1 {
+  color: orange;
+}
+
+// ------ USER-SHOW-PAGE ------
+
+.card-act-created {
+  margin-left: 4px;
+  margin: 40px;
+  margin-top: 110px;
+}
+
+.card-act-created p {
+font-size: x-large;
+}
+
+.card-act-desc {
+  margin-top: -46px;
+}
+
+.card-act-desc p{
+font-size: large;
+}
+
+/*Media Queries*/
+
+/*Smallest device*/
+@media (min-width: 100px) and (max-width: 575px) {
+  .cards-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/*Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) {
+  .cards-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 1200px) {
+  .cards-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 992px) {
+  .cards-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.dashbaord-cards{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 150px;
+}

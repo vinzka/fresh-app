@@ -1,20 +1,19 @@
-<%= render "shared/navbar" %>
-<div class='container-index p-3 '>
-  <div>
-  <%= form_tag activities_path, method: :get do %>
-    <div class='form-search'>
-      <%= text_field_tag :query,
-        params[:query],
-        class: 'form-control',
-        placeholder: '🔍 Search by sport or location'
-      %>
-        <!-- <%= submit_tag "", class: "" %>-->
-  <% end  %>
+<div class="container">
+  <div class="searchbar">
+    <%= form_tag activities_path, method: :get do %>
+      <div class='form-search'>
+        <%= text_field_tag :query,
+          params[:query],
+          class: 'form-control',
+          placeholder: '🔍 Search by sport or location'
+        %>
+          <!-- <%= submit_tag "", class: "" %>-->
+    <% end  %>
       </div>
   </div>
-  <div>
+    <div class="cards-container">
     <% @activities.each do |activity| %>
-    <%= render 'card', activity: activity %>
+        <%= render 'activities/card', activity: activity %>
     <% end %>
   </div>
 </div>

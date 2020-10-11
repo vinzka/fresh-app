@@ -1,6 +1,7 @@
+    <div class="card-activity-index">
+
 <% unless activity.players.count == activity.player_limit %>
   <%= link_to(activity_path(activity)) do %>
-    <div class="card-activity-index">
       <%= image_tag "#{activity.sport.name.downcase}.jpg", class: 'card-activity-image' %>
       <div class="card-activity-index-infos border-bottom">
         <div>
@@ -34,10 +35,9 @@
           </div>
         </div>
         <div class='card-activity-index-nd'>
-          <p><em><strong><%= pluralize(activity.player_limit - activity.players.count, 'player')%> needed </strong></em></p>
+          <p><em><strong><%= pluralize(activity.player_limit - activity.players.count, 'spot')%> left </strong></em></p>
         </div>
       </div>
     </div>
   <% end %>
-  <p></p>
 <% end %>
